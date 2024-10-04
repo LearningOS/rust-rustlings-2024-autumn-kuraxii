@@ -7,7 +7,7 @@
 // Execute `rustlings hint traits4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 pub trait Licensed {
     fn licensing_info(&self) -> String {
@@ -23,7 +23,8 @@ impl Licensed for SomeSoftware {}
 impl Licensed for OtherSoftware {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn compare_license_types(software: ??, software_two: ??) -> bool {
+// impl Licensed特征类型 rust允许使用特征类型进行参数传递  表示任何实现了Licensed的类型 类似c++中的基类
+fn compare_license_types(software: impl Licensed, software_two: impl Licensed) -> bool {
     software.licensing_info() == software_two.licensing_info()
 }
 
