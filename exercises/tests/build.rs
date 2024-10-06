@@ -7,11 +7,11 @@ fn main() {
     // called `TEST_FOO`. Print in the standard output to let
     // Cargo do it.
     let timestamp = std::time::SystemTime::now()
-        .duration_since(std::time::UNIX_EPOCH)
-        .unwrap()
-        .as_secs(); // What's the use of this timestamp here?
+    .duration_since(std::time::UNIX_EPOCH)
+    .unwrap()
+    .as_secs(); // What's the use of this timestamp here?
     let your_command = format!(
-        "cargo:rustc-env=TEST_FOO={}",
+        "rustc-env=TEST_FOO={}",
         timestamp
     );
     println!("cargo:{}", your_command);
@@ -21,4 +21,5 @@ fn main() {
     // Cargo about that.
     let your_command = "rustc-cfg=feature=\"pass\"";
     println!("cargo:{}", your_command);
+ 
 }
