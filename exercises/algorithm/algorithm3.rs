@@ -7,7 +7,7 @@
 
 use std::mem::swap;
 
-fn sort<T: PartialOrd>(array: &mut [T]){
+fn sort<T>(array: &mut [T]) where T: Ord,{
 	for i in 0..array.len(){
         for j in 0..array.len() - i -1{
             if array[j] > array[j+1]{
